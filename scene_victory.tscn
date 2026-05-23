@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://dy5as56vjlquf"]
+
+[ext_resource type="Script" uid="uid://c0p2coffaoty7" path="res://script_victory.gd" id="1_ar8wt"]
+[ext_resource type="Texture2D" uid="uid://b57ch4ndkghkf" path="res://Imagens/Backgrounds/Background_win_game.png" id="2_60gpj"]
+[ext_resource type="AudioStream" uid="uid://bjnoryd52ebym" path="res://Audios/Trilha Sonora (BGM)/Música para tela final/Audio_final_game.mp3" id="3_60gpj"]
+
+[node name="TelaVencendor" type="Node2D" unique_id=1760038594]
+script = ExtResource("1_ar8wt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1213228003]
+position = Vector2(576, 323.75)
+scale = Vector2(0.6889952, 0.68916047)
+texture = ExtResource("2_60gpj")
+metadata/_edit_lock_ = true
+
+[node name="JogarNovamente" type="Button" parent="." unique_id=1410091485]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 420.0
+offset_top = 550.0
+offset_right = 564.0
+offset_bottom = 597.0
+
+[node name="TelaInicial" type="Button" parent="." unique_id=2067538043]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 590.0
+offset_top = 550.0
+offset_right = 737.0
+offset_bottom = 597.0
+
+[node name="Vitória" type="AudioStreamPlayer2D" parent="." unique_id=1740917325]
+stream = ExtResource("3_60gpj")
+autoplay = true
+
+[connection signal="pressed" from="JogarNovamente" to="." method="jogar_novamente"]
+[connection signal="pressed" from="TelaInicial" to="." method="voltar_tela_inicial"]

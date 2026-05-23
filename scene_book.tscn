@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://chloovvmtv4pf"]
+
+[ext_resource type="Script" uid="uid://ctoq1x652eph7" path="res://scrpit_book.gd" id="1_2b6wm"]
+[ext_resource type="Texture2D" uid="uid://dfhyiui2m6ni7" path="res://Imagens/Player/Book/000_Book.png" id="1_b8fv5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2b6wm"]
+size = Vector2(36, 38)
+
+[node name="Livro" type="Node2D" unique_id=531900331]
+
+[node name="Livro" type="Area2D" parent="." unique_id=1648614182]
+script = ExtResource("1_2b6wm")
+
+[node name="Sprite2D" type="Sprite2D" parent="Livro" unique_id=1973403344]
+scale = Vector2(0.11200001, 0.111999996)
+texture = ExtResource("1_b8fv5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Livro" unique_id=460627376]
+shape = SubResource("RectangleShape2D_2b6wm")
+
+[connection signal="area_entered" from="Livro" to="Livro" method="bater_caixa"]
+[connection signal="body_entered" from="Livro" to="Livro" method="eliminar_inimigo"]

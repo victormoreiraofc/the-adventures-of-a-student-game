@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://d27fa1ipc8ugy"]
+
+[ext_resource type="Texture2D" uid="uid://cyajfokeqdyqx" path="res://Imagens/Backgrounds/Background_start_game.png" id="1_53pfy"]
+[ext_resource type="Script" uid="uid://djhmakxq7t2u1" path="res://script_start.gd" id="1_g6kxd"]
+[ext_resource type="AudioStream" uid="uid://crhlwh78lucj0" path="res://Audios/Trilha Sonora (BGM)/Música para tela inicial/Audio_start_screen.mp3" id="3_b5jaw"]
+
+[node name="TelaInicio" type="Node2D" unique_id=65165315]
+position = Vector2(827, 447)
+script = ExtResource("1_g6kxd")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1370697114]
+position = Vector2(-251.00002, -122.99998)
+scale = Vector2(0.71999997, 0.7199999)
+texture = ExtResource("1_53pfy")
+
+[node name="IniciarJogo" type="Button" parent="." unique_id=946181115]
+modulate = Color(1, 1, 1, 0)
+offset_left = -417.0
+offset_top = 105.0
+offset_right = -115.0
+offset_bottom = 170.0
+metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1754571823]
+stream = ExtResource("3_b5jaw")
+autoplay = true
+
+[connection signal="pressed" from="IniciarJogo" to="." method="iniciar_jogo"]

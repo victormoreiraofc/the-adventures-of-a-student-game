@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://i7qj5fqa5dox"]
+
+[ext_resource type="Script" uid="uid://1i08b281pdtv" path="res://script_pause.gd" id="1_gteea"]
+[ext_resource type="Texture2D" uid="uid://dwjaau578ihlk" path="res://Imagens/Backgrounds/Background_stop_game.png" id="2_pb468"]
+[ext_resource type="AudioStream" uid="uid://dtimbcwvosukj" path="res://Audios/Trilha Sonora (BGM)/Música para tela pause/Audio_stop_game.mp3" id="3_pb468"]
+
+[node name="TelaPause" type="CanvasLayer" unique_id=668489305]
+process_mode = 2
+script = ExtResource("1_gteea")
+
+[node name="Control" type="Control" parent="." unique_id=1159423367]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control" unique_id=337962447]
+position = Vector2(576, 324)
+scale = Vector2(0.71999997, 0.72)
+texture = ExtResource("2_pb468")
+
+[node name="Continuar" type="Button" parent="Control" unique_id=1555225088]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 459.0
+offset_top = 297.0
+offset_right = 680.0
+offset_bottom = 354.0
+
+[node name="ReiniciarPartida" type="Button" parent="Control" unique_id=206970984]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 459.0
+offset_top = 367.0
+offset_right = 679.0
+offset_bottom = 420.0
+
+[node name="TelaInicial" type="Button" parent="Control" unique_id=2023463841]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 458.0
+offset_top = 433.0
+offset_right = 680.0
+offset_bottom = 483.0
+
+[node name="Pause" type="AudioStreamPlayer2D" parent="." unique_id=643123447]
+stream = ExtResource("3_pb468")
+
+[connection signal="pressed" from="Control/Continuar" to="." method="botao_continuar"]
+[connection signal="pressed" from="Control/ReiniciarPartida" to="." method="botao_reiniciar_partida"]
+[connection signal="pressed" from="Control/TelaInicial" to="." method="botao_voltar_tela_inicial"]

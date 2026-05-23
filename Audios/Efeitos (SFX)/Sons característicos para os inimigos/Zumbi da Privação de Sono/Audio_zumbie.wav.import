@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ofi6q7uvup0u"
+path="res://.godot/imported/Audio_zumbie.wav-26721ea36cf034cb54ba1c3195b3e3e1.sample"
+
+[deps]
+
+source_file="res://Audios/Efeitos (SFX)/Sons característicos para os inimigos/Zumbi da Privação de Sono/Audio_zumbie.wav"
+dest_files=["res://.godot/imported/Audio_zumbie.wav-26721ea36cf034cb54ba1c3195b3e3e1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=2
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

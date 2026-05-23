@@ -1,0 +1,104 @@
+[gd_scene format=3 uid="uid://2tclq35ququn"]
+
+[ext_resource type="Script" uid="uid://bh0v8funkhwq5" path="res://script_zombie.gd" id="1_dcjsc"]
+[ext_resource type="Texture2D" uid="uid://cbfuxyrk0rvf3" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/001_Zumbi.png" id="2_sohad"]
+[ext_resource type="Texture2D" uid="uid://chy15b70plkk2" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/000_Zumbi.png" id="3_x1e23"]
+[ext_resource type="Texture2D" uid="uid://n8tk0wxcgyeo" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/002_Zumbi.png" id="4_3salk"]
+[ext_resource type="Texture2D" uid="uid://bv4tsl86cmrs2" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/003_Zumbi.png" id="5_bkpux"]
+[ext_resource type="Texture2D" uid="uid://bw1mru478xypr" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/004_Zumbi.png" id="6_tkt3v"]
+[ext_resource type="Texture2D" uid="uid://b11ypc63qvtgv" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/005_Zumbi.png" id="7_vol4l"]
+[ext_resource type="Texture2D" uid="uid://cqvs8katik62y" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/006_Zumbi.png" id="8_lsa1d"]
+[ext_resource type="Texture2D" uid="uid://3mw1iuj1r8if" path="res://Imagens/Inimigos/Zumbi da Privação de Sono/007_Zumbi.png" id="9_awrku"]
+[ext_resource type="AudioStream" uid="uid://bph6hxf4sn7iy" path="res://Audios/Efeitos (SFX)/Som de dano (perda de vida)/Audio_player_damage.wav" id="10_3salk"]
+[ext_resource type="AudioStream" uid="uid://ofi6q7uvup0u" path="res://Audios/Efeitos (SFX)/Sons característicos para os inimigos/Zumbi da Privação de Sono/Audio_zumbie.wav" id="11_bkpux"]
+[ext_resource type="Script" uid="uid://b8fy1sl7wg2ri" path="res://script_sound_enimy_zumbi.gd" id="12_vol4l"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8unt"]
+size = Vector2(92, 149)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sohad"]
+size = Vector2(90, 148)
+
+[sub_resource type="Animation" id="Animation_mvrgk"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_sohad")]
+}
+
+[sub_resource type="Animation" id="Animation_ukssi"]
+resource_name = "walk"
+length = 0.7
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_x1e23"), ExtResource("2_sohad"), ExtResource("4_3salk"), ExtResource("5_bkpux"), ExtResource("6_tkt3v"), ExtResource("7_vol4l"), ExtResource("8_lsa1d"), ExtResource("9_awrku")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kyeht"]
+_data = {
+&"RESET": SubResource("Animation_mvrgk"),
+&"walk": SubResource("Animation_ukssi")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awrku"]
+size = Vector2(588, 882)
+
+[node name="Inimigo" type="Node2D" unique_id=1892116637]
+
+[node name="Inimigo" type="CharacterBody2D" parent="." unique_id=670599190]
+script = ExtResource("1_dcjsc")
+
+[node name="Area2D" type="Area2D" parent="Inimigo" unique_id=1735184841]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo/Area2D" unique_id=187382375]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_q8unt")
+debug_color = Color(0.99343544, 0, 0.24443278, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Inimigo" unique_id=2109223638]
+scale = Vector2(0.41277644, 0.3992868)
+texture = ExtResource("2_sohad")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inimigo" unique_id=427208355]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_sohad")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Inimigo" unique_id=274268599]
+libraries/ = SubResource("AnimationLibrary_kyeht")
+
+[node name="Dano" type="AudioStreamPlayer2D" parent="Inimigo" unique_id=2121872217]
+stream = ExtResource("10_3salk")
+
+[node name="Zumbi" type="AudioStreamPlayer2D" parent="Inimigo" unique_id=1117859154]
+stream = ExtResource("11_bkpux")
+
+[node name="AreaSoundEnimyZumbi" type="Area2D" parent="Inimigo" unique_id=2102538291]
+script = ExtResource("12_vol4l")
+
+[node name="CollisionSoundZumbiMap" type="CollisionShape2D" parent="Inimigo/AreaSoundEnimyZumbi" unique_id=670726784]
+shape = SubResource("RectangleShape2D_awrku")
+
+[node name="SomZumbi" type="AudioStreamPlayer2D" parent="Inimigo/AreaSoundEnimyZumbi" unique_id=36609054]
+stream = ExtResource("11_bkpux")
+
+[connection signal="body_entered" from="Inimigo/Area2D" to="Inimigo" method="atacar_personagem"]
+[connection signal="body_entered" from="Inimigo/AreaSoundEnimyZumbi" to="Inimigo/AreaSoundEnimyZumbi" method="som_zumbi"]
+[connection signal="body_exited" from="Inimigo/AreaSoundEnimyZumbi" to="Inimigo/AreaSoundEnimyZumbi" method="som_zumbi_fora"]

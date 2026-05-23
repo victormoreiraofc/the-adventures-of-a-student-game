@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://qr7cf3lhp4lt"
+path="res://.godot/imported/Audio_game_over.mp3-70e768e51b4bc351acf9991b874f73f0.mp3str"
+
+[deps]
+
+source_file="res://Audios/Trilha Sonora (BGM)/Música para tela de game over/Audio_game_over.mp3"
+dest_files=["res://.godot/imported/Audio_game_over.mp3-70e768e51b4bc351acf9991b874f73f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

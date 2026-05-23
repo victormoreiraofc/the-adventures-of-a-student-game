@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cp2was73vkc2q"]
+
+[ext_resource type="Texture2D" uid="uid://dkw54yo13j010" path="res://Imagens/Itens/Life_000.png" id="1_pbwcl"]
+[ext_resource type="Script" uid="uid://bm02c3xv8k61u" path="res://script_HUD.gd" id="1_v4pa8"]
+
+[node name="HUD" type="Node2D" unique_id=80607364]
+script = ExtResource("1_v4pa8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1800164715]
+position = Vector2(-1.9073486e-06, -3.8146973e-06)
+scale = Vector2(0.14634143, 0.14634147)
+texture = ExtResource("1_pbwcl")
+
+[node name="Label" type="Label" parent="." unique_id=3820990]
+offset_left = 23.0
+offset_top = -15.0
+offset_right = 63.0
+offset_bottom = 16.0
+theme_override_font_sizes/font_size = 20
+text = "x 3"
+metadata/_edit_use_anchors_ = true

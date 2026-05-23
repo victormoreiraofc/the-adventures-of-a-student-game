@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dtimbcwvosukj"
+path="res://.godot/imported/Audio_stop_game.mp3-c754af165aa89d1b0ed3a13275738fc2.mp3str"
+
+[deps]
+
+source_file="res://Audios/Trilha Sonora (BGM)/Música para tela pause/Audio_stop_game.mp3"
+dest_files=["res://.godot/imported/Audio_stop_game.mp3-c754af165aa89d1b0ed3a13275738fc2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

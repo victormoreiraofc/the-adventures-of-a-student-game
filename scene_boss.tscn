@@ -1,0 +1,127 @@
+[gd_scene format=3 uid="uid://bkjk24rrs4two"]
+
+[ext_resource type="Texture2D" uid="uid://cf3r0yrojmdg8" path="res://Imagens/Inimigos/Boleto da Faculdade/001_Boleto.png" id="1_re77f"]
+[ext_resource type="Script" uid="uid://dypncdasiuwf2" path="res://script_boss.gd" id="1_w0p85"]
+[ext_resource type="Texture2D" uid="uid://blse073aw12hh" path="res://Imagens/Inimigos/Boleto da Faculdade/000_Boleto.png" id="2_w0p85"]
+[ext_resource type="Texture2D" uid="uid://uuaphv6ukhlb" path="res://Imagens/Inimigos/Boleto da Faculdade/002_Boleto.png" id="3_tdo3v"]
+[ext_resource type="Texture2D" uid="uid://b6rev15f7npqx" path="res://Imagens/Inimigos/Boleto da Faculdade/003_Boleto.png" id="4_30qap"]
+[ext_resource type="Texture2D" uid="uid://b8xi3ef64bhc3" path="res://Imagens/Inimigos/Boleto da Faculdade/004_Boleto.png" id="5_vuvjg"]
+[ext_resource type="Texture2D" uid="uid://b134ne61nfouk" path="res://Imagens/Inimigos/Boleto da Faculdade/005_Boleto.png" id="6_fcrfy"]
+[ext_resource type="Texture2D" uid="uid://dgmsf4hy40r7n" path="res://Imagens/Inimigos/Boleto da Faculdade/006_Boleto.png" id="7_6kn86"]
+[ext_resource type="Texture2D" uid="uid://dqj6ub7b05kst" path="res://Imagens/Inimigos/Boleto da Faculdade/007_Boleto.png" id="8_5up06"]
+[ext_resource type="AudioStream" uid="uid://bph6hxf4sn7iy" path="res://Audios/Efeitos (SFX)/Som de dano (perda de vida)/Audio_player_damage.wav" id="10_tdo3v"]
+[ext_resource type="AudioStream" uid="uid://codct5meiyc5g" path="res://Audios/Efeitos (SFX)/Sons característicos para os inimigos/Boleto da Faculdade/Audio_college.wav" id="11_30qap"]
+[ext_resource type="Script" uid="uid://ckfptdk6kg7ll" path="res://script_sound_enimy_boss.gd" id="12_fcrfy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_re77f"]
+size = Vector2(209, 216)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tdo3v"]
+size = Vector2(204, 159.40015)
+
+[sub_resource type="Animation" id="Animation_y6nlt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("1_re77f")]
+}
+
+[sub_resource type="Animation" id="Animation_ycwqb"]
+resource_name = "jump"
+length = 0.8
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("2_w0p85"), ExtResource("1_re77f"), ExtResource("3_tdo3v"), ExtResource("4_30qap"), ExtResource("5_vuvjg"), ExtResource("6_fcrfy"), ExtResource("7_6kn86"), ExtResource("8_5up06"), ExtResource("2_w0p85")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3n13"]
+_data = {
+&"RESET": SubResource("Animation_y6nlt"),
+&"jump": SubResource("Animation_ycwqb")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tdo3v"]
+bg_color = Color(0.13333334, 0.13333334, 0.13333334, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30qap"]
+bg_color = Color(1, 0, 0, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5up06"]
+size = Vector2(588, 882)
+
+[node name="Boss" type="Node2D" unique_id=1243986708]
+
+[node name="Boss" type="CharacterBody2D" parent="." unique_id=1276241236]
+script = ExtResource("1_w0p85")
+
+[node name="Area2D" type="Area2D" parent="Boss" unique_id=1478560573]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D" unique_id=1590699265]
+position = Vector2(-3.5, 0)
+shape = SubResource("RectangleShape2D_re77f")
+
+[node name="Sprite2D" type="Sprite2D" parent="Boss" unique_id=1550088920]
+scale = Vector2(0.7485873, 0.7562882)
+texture = ExtResource("1_re77f")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss" unique_id=1783676716]
+position = Vector2(-4, 2.375)
+scale = Vector2(1, 1.3346913)
+shape = SubResource("RectangleShape2D_tdo3v")
+debug_color = Color(0.9987381, 0, 0.14610073, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Boss" unique_id=184208209]
+libraries/ = SubResource("AnimationLibrary_q3n13")
+
+[node name="ProgressBar" type="ProgressBar" parent="Boss" unique_id=2072355083]
+offset_left = -58.0
+offset_top = -110.00001
+offset_right = -55.037933
+offset_bottom = -68.83657
+rotation = -1.5754364
+scale = Vector2(2.2256038, 2.4078472)
+theme_override_styles/background = SubResource("StyleBoxFlat_tdo3v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_30qap")
+max_value = 10.0
+value = 10.0
+fill_mode = 2
+show_percentage = false
+
+[node name="Dano" type="AudioStreamPlayer2D" parent="Boss" unique_id=483055719]
+position = Vector2(-3.8146973e-06, -3.8146973e-06)
+rotation = -1.5659541
+scale = Vector2(111.472275, -90.00008)
+stream = ExtResource("10_tdo3v")
+
+[node name="Boss" type="AudioStreamPlayer2D" parent="Boss" unique_id=253855692]
+stream = ExtResource("11_30qap")
+
+[node name="AreaSoundEnimyBoss" type="Area2D" parent="." unique_id=141429972]
+script = ExtResource("12_fcrfy")
+
+[node name="CollisionSoundBossMap" type="CollisionShape2D" parent="AreaSoundEnimyBoss" unique_id=699276908]
+shape = SubResource("RectangleShape2D_5up06")
+
+[node name="SomBoss" type="AudioStreamPlayer2D" parent="AreaSoundEnimyBoss" unique_id=1313624774]
+stream = ExtResource("11_30qap")
+
+[connection signal="body_entered" from="Boss/Area2D" to="Boss" method="atacar_personagem"]
+[connection signal="body_entered" from="AreaSoundEnimyBoss" to="AreaSoundEnimyBoss" method="som_boss"]
+[connection signal="body_exited" from="AreaSoundEnimyBoss" to="AreaSoundEnimyBoss" method="som_boss_fora"]

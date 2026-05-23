@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://dr28yy6relhba"]
+
+[ext_resource type="Texture2D" uid="uid://dkw54yo13j010" path="res://Imagens/Itens/Life_000.png" id="1_i3hoj"]
+[ext_resource type="Script" uid="uid://ck84jbk3cd5gx" path="res://script_life.gd" id="1_r66cb"]
+[ext_resource type="AudioStream" uid="uid://1j7a2lc57dpj" path="res://Audios/Efeitos (SFX)/Som de ganhar vida/Audio_player_life.wav" id="3_oslqn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3hoj"]
+size = Vector2(37.5, 32)
+
+[node name="Vida" type="Node2D" unique_id=878303035]
+
+[node name="Vida" type="Area2D" parent="." unique_id=2067619264]
+script = ExtResource("1_r66cb")
+
+[node name="Sprite2D" type="Sprite2D" parent="Vida" unique_id=1733053305]
+scale = Vector2(0.15718152, 0.15718158)
+texture = ExtResource("1_i3hoj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Vida" unique_id=1222812080]
+position = Vector2(0.75, 0)
+shape = SubResource("RectangleShape2D_i3hoj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Vida" unique_id=90116205]
+stream = ExtResource("3_oslqn")
+
+[connection signal="body_entered" from="Vida" to="Vida" method="coletar_vida"]
