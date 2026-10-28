@@ -1,7 +1,17 @@
 <div align="center">
+<table width="100%">
+  <tr>
+    <td align="left" width="120">
+      <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Godot_icon.svg/1280px-Godot_icon.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail" alt="Godot Logo" width="100" />
+    </td>
+    <td align="right">
+      <h1>As Aventuras de um Estudante</h1>
+      <h3 style="margin-top: -10px;">Jogo de Plataforma 2D — Godot Engine 4.6</h3>
+    </td>
+  </tr>
+</table>
 
-# As Aventuras de um Estudante
-### Jogo de Plataforma 2D — Godot Engine 4.6
+<br/>
 
 [![Godot Engine](https://img.shields.io/badge/Godot-4.6-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white)](https://godotengine.org/)
 [![GDScript](https://img.shields.io/badge/GDScript-Linguagem-478CBF?style=for-the-badge&logo=godot-engine&logoColor=white)](https://docs.godotengine.org/en/stable/tutorials/scripting/gdscript/)
@@ -245,44 +255,46 @@ assets:   adição de assets visuais ou de áudio
 <table>
   <tr>
     <td align="center">
-      <a href="https://github.com/victormoreiraofc">
-        <img src="https://github.com/victormoreiraofc.png" width="80px;" alt="Victor Moreira"/><br/>
-        <sub><b>Victor Moreira</b></sub>
-      </a><br/>
-      <sub>Tech Lead · Back-end · Front-end</sub>
-    </td>
-    <td align="center">
       <a href="https://github.com/Ingenzin">
         <img src="https://github.com/Ingenzin.png" width="80px;" alt="Lucas Santos"/><br/>
         <sub><b>Lucas Santos</b></sub>
       </a><br/>
-      <sub>Back-end · Front-end</sub>
-    </td>
-    <td align="center">
-      <a href="https://github.com/PamellaCorrea">
-        <img src="https://github.com/PamellaCorrea.png" width="80px;" alt="Pamella Correa"/><br/>
-        <sub><b>Pamella Correa</b></sub>
-      </a><br/>
-      <sub>Documentação · Background do Nível (IA)</sub>
+      </a><br/><a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Back-end">🛠️</a>
+      <a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Front-end">🎨</a>
     </td>
     <td align="center">
       <a href="https://github.com/Mateus-Ebenezer">
         <img src="https://github.com/Mateus-Ebenezer.png" width="80px;" alt="Mateus Ebenezer"/><br/>
         <sub><b>Mateus Ebenezer</b></sub>
       </a><br/>
-      <sub>Assets de Inimigos (IA)</sub>
+      </a><br/><a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Arte e design com IA">✏️</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/PamellaCorrea">
+        <img src="https://github.com/PamellaCorrea.png" width="80px;" alt="Pamella Correa"/><br/>
+        <sub><b>Pamella Correa</b></sub>
+      </a><br/>
+      </a><br/><a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Documentação">📋</a>
+      <a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Arte e design com IA">✏️</a>
     </td>
     <td align="center">
       <a href="https://github.com/RuanAlvesz">
         <img src="https://github.com/RuanAlvesz.png" width="80px;" alt="Ruan Alves"/><br/>
         <sub><b>Ruan Alves</b></sub>
       </a><br/>
-      <sub>Busca e Organização de Áudios</sub>
+      </a><br/><a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Áudio e sons">🔊</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/victormoreiraofc">
+        <img src="https://github.com/victormoreiraofc.png" width="80px;" alt="Victor Moreira"/><br/>
+        <sub><b>Victor Moreira</b></sub>
+      </a><br/>
+      </a><br/><a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Liderança técnica">🗡️</a>
+      <a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Back-end">🛠️</a>
+      <a href="https://github.com/victormoreiraofc/the-adventures-of-a-student-game/" title="Front-end">🎨</a>
     </td>
   </tr>
 </table>
-
----
 
 ## Licença
 
